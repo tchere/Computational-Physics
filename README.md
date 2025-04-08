@@ -1,6 +1,5 @@
-# Computational-Physics
 
-# 🧮 Computational Physics Course
+# 🧮 Computational Physics 
 
 Welcome to the **Computational Physics** course repository! This course introduces numerical methods to solve physical problems that are analytically intractable. Topics range from solving ordinary and partial differential equations to quantum many-body problems using exact diagonalization.
 
