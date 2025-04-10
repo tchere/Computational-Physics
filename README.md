@@ -22,6 +22,16 @@ To equip us with practical computational tools for solving physical problems, in
 
 ### 🔧 Assignment 1 
 - Euler’s Method
+  \begin{equation}
+\frac{dy}{dt} = f(t, y), \quad y(t_0) = y_0
+\end{equation}
+
+The Euler method provides an iterative numerical solution using the update formula:
+
+\begin{equation}
+y_{n+1} = y_n + h \cdot f(t_n, y_n)
+\end{equation}
+  
 - Runge-Kutta Methods (RK2, RK4)
 - Adaptive Step Size
 - Phase Space Analysis
