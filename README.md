@@ -20,7 +20,7 @@ To equip us with practical computational tools for solving physical problems, in
 
 
 
-### 🔧 Assignment 1 
+## 🔧 Assignment 1 
 
 The first part of Assignment 1 is to use 3 numerical method (Euler velocity verlet and Runge Ketta method to calculate the orbit of the Earth. The fundamental procedure of the method is given the initial boundary condition and calculate the next iternation data, we would like to see which method can have a high precision to complete one orbit. The introduction of the method are written as follow:
 
@@ -77,6 +77,90 @@ y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)
 $$
 
 By comparsion, Runge Kutta method perform the grestest performence, since the Runge Kutta method has the lowest trancation error among those method under the same iteration time step. 
+
+The latter part give the proof of Kepler's second law, which state that the Sun sweeps equal areas of space during equal time intervals as the planet orbits. If we express it in equation: 
+
+$$
+\frac{dA}{dt} = \frac{1}{2}rv
+$$
+In the code, we prove that each second of 1/2 rv result respond to similar value, which means that there are similar ratio of dA/dt, which prove the Kelper's second law.
+
+## 🔧 Assignment 3
+
+- energy calculation
+
+Wavefunction Representation and Hamiltonian Matrix
+
+ Wavefunction vector:
+
+$$
+\Psi =
+\begin{pmatrix}
+\psi(1) \\
+\psi(2) \\
+\psi(3) \\
+\vdots \\
+\psi(N-1) \\
+\psi(N)
+\end{pmatrix}
+$$
+
+With boundary conditions:
+
+$$
+\psi(0) = \psi(N+1) = 0
+$$
+
+---
+
+Matrices:
+
+**Matrix A:**
+
+$$
+\mathbf{A} = \frac{1}{h^2} \left( \mathbb{I}_{-1} - 2\mathbb{I}_0 + \mathbb{I}_1 \right)
+$$
+
+**Matrix B:**
+
+$$
+\mathbf{B} = \frac{1}{12} \left( \mathbb{I}_{-1} + 10\mathbb{I}_0 + \mathbb{I}_1 \right)
+$$
+
+**Potential matrix \( \nu \):**
+
+$$
+\nu =
+\begin{pmatrix}
+\nu_1 & 0 & \cdots & 0 \\
+0 & \nu_2 & \cdots & 0 \\
+\vdots & 0 & \ddots & \vdots \\
+0 & 0 & \cdots & \nu_N
+\end{pmatrix}
+$$
+
+---
+
+Hamiltonian Equation:
+
+$$
+\left( -\frac{1}{\gamma^2} \mathbf{B}^{-1} \mathbf{A} + \nu \right) \Psi = \epsilon \Psi
+$$
+
+---
+
+Boundary Conditions:
+
+- \( \psi(1) \) has no left neighbour  
+- \( \psi(N) \) has no right neighbour
+
+
+We apply the modified Hamiltonain to find out the enengy funtion of the system, as the eigenvcalue of the Hamiltonian is the energy. 
+
+
+
+
+
 
 
 
