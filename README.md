@@ -21,16 +21,61 @@ To equip us with practical computational tools for solving physical problems, in
 
 
 ### 🔧 Assignment 1 
-- Euler’s Method
-  \begin{equation}
+
+The first part of Assignment 1 is to use 3 numerical method (Euler velocity verlet and Runge Ketta method to calculate the orbit of the Earth, we would like to see which method can have a high precision to complete one orbit. The introduction of the method are written as follow:
+
+- Euler’s Method (The first order forward differentiation)
+$$
 \frac{dy}{dt} = f(t, y), \quad y(t_0) = y_0
-\end{equation}
+$$
 
-The Euler method provides an iterative numerical solution using the update formula:
+The update rule is given by:
 
-\begin{equation}
+$$
 y_{n+1} = y_n + h \cdot f(t_n, y_n)
-\end{equation}
+$$
+
+Where:
+- \( y_n \) is the approximation of the solution at time \( t_n \),
+- \( h \) is the time step size,
+- \( f(t_n, y_n) \) is the derivative evaluated at \( (t_n, y_n) \).
+
+- Velocity Verlet method
+
+$$
+x_{n+1} = x_n + v_n h + \frac{1}{2} a_n h^2
+$$
+
+$$
+a_{n+1} = a(x_{n+1}, t_{n+1})
+$$
+
+$$
+v_{n+1} = v_n + \frac{1}{2} (a_n + a_{n+1}) h
+$$
+
+$$
+k_1 = f(t_n, y_n)
+$$
+
+$$
+k_2 = f\left(t_n + \frac{h}{2}, y_n + \frac{h}{2}k_1\right)
+$$
+
+$$
+k_3 = f\left(t_n + \frac{h}{2}, y_n + \frac{h}{2}k_2\right)
+$$
+
+$$
+k_4 = f(t_n + h, y_n + hk_3)
+$$
+
+$$
+y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)
+$$
+
+
+
   
 - Runge-Kutta Methods (RK2, RK4)
 - Adaptive Step Size
