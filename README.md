@@ -22,7 +22,7 @@ To equip us with practical computational tools for solving physical problems, in
 
 ### 🔧 Assignment 1 
 
-The first part of Assignment 1 is to use 3 numerical method (Euler velocity verlet and Runge Ketta method to calculate the orbit of the Earth, we would like to see which method can have a high precision to complete one orbit. The introduction of the method are written as follow:
+The first part of Assignment 1 is to use 3 numerical method (Euler velocity verlet and Runge Ketta method to calculate the orbit of the Earth. The fundamental procedure of the method is given the initial boundary condition and calculate the next iternation data, we would like to see which method can have a high precision to complete one orbit. The introduction of the method are written as follow:
 
 - Euler’s Method (The first order forward differentiation)
 $$
@@ -54,6 +54,8 @@ $$
 v_{n+1} = v_n + \frac{1}{2} (a_n + a_{n+1}) h
 $$
 
+- Runge-Kutta Methods (RK4)
+
 $$
 k_1 = f(t_n, y_n)
 $$
@@ -74,12 +76,9 @@ $$
 y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)
 $$
 
+By comparsion, Runge Kutta method perform the grestest performence, since the Runge Kutta method has the lowest trancation error among those method under the same iteration time step. 
 
 
-  
-- Runge-Kutta Methods (RK2, RK4)
-- Adaptive Step Size
-- Phase Space Analysis
 
 ### 📘 Applications
 - Simple Harmonic Oscillator
