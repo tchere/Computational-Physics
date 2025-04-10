@@ -1,26 +1,26 @@
 
 # 🧮 Computational Physics 
 
-Welcome to the **Computational Physics** course repository! This course introduces numerical methods to solve physical problems that are analytically intractable. Topics range from solving ordinary and partial differential equations to quantum many-body problems using exact diagonalization.
+
+## 📚 Objective
+
+To equip us with practical computational tools for solving physical problems, including numerical methods for ODEs and PDEs, and advanced techniques like exact diagonalization and Monte Carlo methods for quantum many-body systems.
+
+
+## 🧠 What I have learned
+- Classical equation of motion (pendulum and wave problem solved by numerical ODE, such as Euler method, Leap frog and 4th order Runge Kutta method on harmonic oscillator)
+- Relaxation method to solve PDE (Jacobi Relaxation)
+- Method for solving space-time PDE ( Forward time centred space discretisation (FTCS) and CTCS scheme method and Lax-Wendroff method)
+- Quantum many body phsyics ( Exact diagonalization) 
+- Classical and quantum Monte Carol Method 
 
 ---
 
-## 📚 Course Overview
+## 📘 Assignment description
 
-This course is structured into the following main modules:
 
-### 1. 🧠 Fundamentals
-- Floating point precision and errors
-- Taylor expansion and numerical approximations
-- Python/NumPy/Matplotlib/Scipy essentials for scientific computing
 
----
-
-## 📈 Module 1: Numerical ODEs
-
-This module focuses on solving **ordinary differential equations (ODEs)** arising in dynamical systems.
-
-### 🔧 Topics
+### 🔧 Assignment 1 
 - Euler’s Method
 - Runge-Kutta Methods (RK2, RK4)
 - Adaptive Step Size
