@@ -208,12 +208,12 @@ We are now considering the problem in Heisenberg model.
 
 The Hamiltonian is:
 
-$$
+\[
 \begin{align}
 H &= J \sum_{\langle i,j \rangle} \vec{S}_i \cdot \vec{S}_j \\
   &= J \sum_{\langle i,j \rangle} \left( \frac{1}{2}(S_i^+ S_j^- + S_i^- S_j^+) + S_i^z S_j^z \right)
 \end{align}
-$$
+\]
 
 
 ### 🔧 Action of \( H \) on Basis States
