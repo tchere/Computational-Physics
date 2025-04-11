@@ -204,86 +204,40 @@ Application of exact diagonlization to find energy eigen function.
 
 We are now considering the problem in Heisenberg model. 
 
-## 🧮 Heisenberg Hamiltonian
+### Heisenberg Hamiltonian
 
-The Hamiltonian is:
-
-$$
-H = J \sum_{\langle i,j \rangle} \vec{S}_i \cdot \vec{S}_j 
-= J \sum_{\langle i,j \rangle} \left( \frac{1}{2}(S_i^+ S_j^- + S_i^- S_j^+) + S_i^z S_j^z \right)
-$$
+\( H = J \sum_{\langle i,j \rangle} \vec{S}_i \cdot \vec{S}_j = J \sum_{\langle i,j \rangle} \left( \frac{1}{2}(S_i^+ S_j^- + S_i^- S_j^+) + S_i^z S_j^z \right) \)
 
 ---
 
-### 🛠️ Action of \( H \) on Basis States
+### Action on Basis States
 
-$$
-H \left| \uparrow \uparrow \right\rangle = \frac{J}{4} \left| \uparrow \uparrow \right\rangle
-$$
+\( H | \uparrow \uparrow \rangle = \frac{J}{4} | \uparrow \uparrow \rangle \)
 
-$$
-H \left| \downarrow \downarrow \right\rangle = \frac{J}{4} \left| \downarrow \downarrow \right\rangle
-$$
+\( H | \downarrow \downarrow \rangle = \frac{J}{4} | \downarrow \downarrow \rangle \)
 
-$$
-H \left| \uparrow \downarrow \right\rangle = J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \uparrow \downarrow \right\rangle 
-= \frac{J}{2} \left| \downarrow \uparrow \right\rangle - \frac{J}{4} \left| \uparrow \downarrow \right\rangle
-$$
+\( H | \uparrow \downarrow \rangle = \frac{J}{2} | \downarrow \uparrow \rangle - \frac{J}{4} | \uparrow \downarrow \rangle \)
 
-$$
-H \left| \downarrow \uparrow \right\rangle = J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \downarrow \uparrow \right\rangle 
-= \frac{J}{2} \left| \uparrow \downarrow \right\rangle - \frac{J}{4} \left| \downarrow \uparrow \right\rangle
-$$
+\( H | \downarrow \uparrow \rangle = \frac{J}{2} | \uparrow \downarrow \rangle - \frac{J}{4} | \downarrow \uparrow \rangle \)
 
 ---
 
-### 📐 Matrix Elements
-
-$$
-\langle \uparrow \uparrow | H | \uparrow \uparrow \rangle = \frac{J}{4}
-\qquad
-\langle \downarrow \downarrow | H | \downarrow \downarrow \rangle = \frac{J}{4}
-$$
-
-$$
-\langle \uparrow \downarrow | H | \uparrow \downarrow \rangle = -\frac{J}{4}
-\qquad
-\langle \downarrow \uparrow | H | \downarrow \uparrow \rangle = -\frac{J}{4}
-$$
-
-$$
-\langle \uparrow \downarrow | H | \downarrow \uparrow \rangle = \frac{J}{2}
-\qquad
-\langle \downarrow \uparrow | H | \uparrow \downarrow \rangle = \frac{J}{2}
-$$
-
----
-
-### 🧾 Hamiltonian Matrix
+### Matrix Form
 
 In the basis:
 
-$$
-\left\{
-\begin{aligned}
-&\left| \uparrow \uparrow \right\rangle \\
-&\left| \uparrow \downarrow \right\rangle \\
-&\left| \downarrow \uparrow \right\rangle \\
-&\left| \downarrow \downarrow \right\rangle
-\end{aligned}
-\right\}
-$$
+- \( | \uparrow \uparrow \rangle \)
+- \( | \uparrow \downarrow \rangle \)
+- \( | \downarrow \uparrow \rangle \)
+- \( | \downarrow \downarrow \rangle \)
 
-The matrix form of \( H \) is:
+The matrix is:
 
-$$
-H = J \begin{pmatrix}
-\frac{1}{4} & 0 & 0 & 0 \\
-0 & -\frac{1}{4} & \frac{1}{2} & 0 \\
-0 & \frac{1}{2} & -\frac{1}{4} & 0 \\
-0 & 0 & 0 & \frac{1}{4}
-\end{pmatrix}
-$$
+H = J *
+[ 1/4 0 0 0 ]
+[ 0 -1/4 1/2 0 ]
+[ 0 1/2 -1/4 0 ]
+[ 0 0 0 1/4 ]
 
 
 
