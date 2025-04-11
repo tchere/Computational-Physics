@@ -79,6 +79,7 @@ The latter part give the proof of Kepler's second law, which state that the Sun 
 $$
 \frac{dA}{dt} = \frac{1}{2}rv
 $$
+
 In the code, we prove that each second of 1/2 rv result respond to similar value, which means that there are similar ratio of dA/dt, which prove the Kelper's second law.
 
 ## 🔧 Assignment 3
@@ -195,7 +196,11 @@ $$
 H_{r,s} = -\frac{\hbar^2}{2m} \cdot \frac{\delta_{r+1,s} + \delta_{r-1,s} - 2\delta_{r,s}}{h^2} + V(r)\delta_{r,s}
 $$
 
-We can find out the list of all psi, then we can plot the probability os the system which is the square term of psi.
+We can find out the list of all psi, then we can plot the probability distribution of the system which is the square term of psi.
+
+## Assignment 4
+
+
 
 
 
