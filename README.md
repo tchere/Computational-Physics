@@ -204,7 +204,7 @@ Application of exact diagonlization to find energy eigen function.
 
 We are now considering the problem in Heisenberg model. 
 
-🧮 Exact Diagonalization for the Heisenberg Hamiltonian
+## 🧮 Exact Diagonalization for the Heisenberg Hamiltonian
 
 The Heisenberg Hamiltonian is given by:
 
@@ -214,7 +214,7 @@ $$
 
 ---
 
- Action of \( H \) on Basis States
+### 🔧 Action of \( H \) on Basis States
 
 \[
 H \left| \uparrow\uparrow \right\rangle = \frac{J}{4} \left| \uparrow\uparrow \right\rangle
@@ -234,7 +234,7 @@ H \left| \downarrow\uparrow \right\rangle = J \left( \frac{1}{2}(S_1^+ S_2^- + S
 
 ---
 
- Matrix Elements
+### 🧠 Matrix Elements
 
 \[
 \langle \uparrow\uparrow | H | \uparrow\uparrow \rangle = \frac{J}{4} \quad\quad
@@ -253,7 +253,7 @@ H \left| \downarrow\uparrow \right\rangle = J \left( \frac{1}{2}(S_1^+ S_2^- + S
 
 ---
 
- Hamiltonian Matrix
+### 🧾 Hamiltonian Matrix
 
 In the basis \( \left\{ \left| \uparrow\uparrow \right\rangle, \left| \uparrow\downarrow \right\rangle, \left| \downarrow\uparrow \right\rangle, \left| \downarrow\downarrow \right\rangle \right\} \):
 
