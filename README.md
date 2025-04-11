@@ -275,9 +275,19 @@ We make use of exact diagonlization to calculate the ground state energy of a 10
 The latter part of the Assignment is to calculate the Renyi Entropy and von Neumann entropy for N=10.
 
 
+The equation of Renyi Entropy is:
 
+$$
+S_A^{(n)} = \frac{1}{1 - n} \ln \left( \mathrm{Tr} \left( \rho_A^n \right) \right).
+$$
 
+While the von Neumann entropy is:
 
+$$
+S_A^{\mathrm{vN}} = -\mathrm{Tr}(\rho_A \ln \rho_A)
+$$
+
+The code in my assignment follow 
 
 
 
