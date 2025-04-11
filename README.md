@@ -204,17 +204,18 @@ Application of exact diagonlization to find energy eigen function.
 
 We are now considering the problem in Heisenberg model. 
 
- 🧮 Exact Diagonalization for the Heisenberg Hamiltonian
+ ## 🧮 Heisenberg Hamiltonian for Two Spins
 
-The Heisenberg Hamiltonian is:
+The Hamiltonian is:
 
 $$
-H = J \sum_{\langle i,j \rangle} \vec{S}_i \cdot \vec{S}_j = J \sum_{\langle i,j \rangle} \left( \frac{1}{2}(S_i^+ S_j^- + S_i^- S_j^+) + S_i^z S_j^z \right)
+H = J \sum_{\langle i,j \rangle} \vec{S}_i \cdot \vec{S}_j 
+= J \sum_{\langle i,j \rangle} \left( \frac{1}{2}(S_i^+ S_j^- + S_i^- S_j^+) + S_i^z S_j^z \right)
 $$
 
 ---
 
- Action of \( H \) on Basis States
+### 🔧 Action of \( H \) on Basis States
 
 $$
 H \left| \uparrow \uparrow \right\rangle = \frac{J}{4} \left| \uparrow \uparrow \right\rangle
@@ -225,56 +226,65 @@ H \left| \downarrow \downarrow \right\rangle = \frac{J}{4} \left| \downarrow \do
 $$
 
 $$
-H \left| \uparrow \downarrow \right\rangle = J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \uparrow \downarrow \right\rangle = \frac{J}{2} \left| \downarrow \uparrow \right\rangle - \frac{J}{4} \left| \uparrow \downarrow \right\rangle
+H \left| \uparrow \downarrow \right\rangle 
+= J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \uparrow \downarrow \right\rangle 
+= \frac{J}{2} \left| \downarrow \uparrow \right\rangle - \frac{J}{4} \left| \uparrow \downarrow \right\rangle
 $$
 
 $$
-H \left| \downarrow \uparrow \right\rangle = J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \downarrow \uparrow \right\rangle = \frac{J}{2} \left| \uparrow \downarrow \right\rangle - \frac{J}{4} \left| \downarrow \uparrow \right\rangle
-$$
-
----
-
- Matrix Elements
-
-$$
-\langle \uparrow \uparrow | H | \uparrow \uparrow \rangle = \frac{J}{4} \quad\quad \langle \downarrow \downarrow | H | \downarrow \downarrow \rangle = \frac{J}{4}
-$$
-
-$$
-\langle \uparrow \downarrow | H | \uparrow \downarrow \rangle = -\frac{J}{4} \quad\quad \langle \downarrow \uparrow | H | \downarrow \uparrow \rangle = -\frac{J}{4}
-$$
-
-$$
-\langle \downarrow \uparrow | H | \uparrow \downarrow \rangle = \frac{J}{2} \quad\quad \langle \uparrow \downarrow | H | \downarrow \uparrow \rangle = \frac{J}{2}
+H \left| \downarrow \uparrow \right\rangle 
+= J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \downarrow \uparrow \right\rangle 
+= \frac{J}{2} \left| \uparrow \downarrow \right\rangle - \frac{J}{4} \left| \downarrow \uparrow \right\rangle
 $$
 
 ---
 
- Hamiltonian Matrix
+### 📐 Matrix Elements
+
+$$
+\langle \uparrow \uparrow | H | \uparrow \uparrow \rangle = \frac{J}{4}
+\qquad
+\langle \downarrow \downarrow | H | \downarrow \downarrow \rangle = \frac{J}{4}
+$$
+
+$$
+\langle \uparrow \downarrow | H | \uparrow \downarrow \rangle = -\frac{J}{4}
+\qquad
+\langle \downarrow \uparrow | H | \downarrow \uparrow \rangle = -\frac{J}{4}
+$$
+
+$$
+\langle \uparrow \downarrow | H | \downarrow \uparrow \rangle = \frac{J}{2}
+\qquad
+\langle \downarrow \uparrow | H | \uparrow \downarrow \rangle = \frac{J}{2}
+$$
+
+---
+
+### 🧾 Hamiltonian Matrix
 
 In the basis:
 
 $$
 \left\{
-\left| \uparrow \uparrow \right\rangle,
-\left| \uparrow \downarrow \right\rangle,
-\left| \downarrow \uparrow \right\rangle,
-\left| \downarrow \downarrow \right\rangle
-\right\}
-$$
-
-
-The Hamiltonian matrix is:
-
-$$
-\left\{
 \begin{aligned}
-&\left| \uparrow \uparrow \right\rangle, \\
-&\left| \uparrow \downarrow \right\rangle, \\
-&\left| \downarrow \uparrow \right\rangle, \\
+&\left| \uparrow \uparrow \right\rangle \\
+&\left| \uparrow \downarrow \right\rangle \\
+&\left| \downarrow \uparrow \right\rangle \\
 &\left| \downarrow \downarrow \right\rangle
 \end{aligned}
 \right\}
+$$
+
+The matrix form of \( H \) is:
+
+$$
+H = J \begin{pmatrix}
+\frac{1}{4} & 0 & 0 & 0 \\
+0 & -\frac{1}{4} & \frac{1}{2} & 0 \\
+0 & \frac{1}{2} & -\frac{1}{4} & 0 \\
+0 & 0 & 0 & \frac{1}{4}
+\end{pmatrix}
 $$
 
 Exact diagonalization is a specific approach that to find out the eigenvalue of each spin operator and they manifest in the Hamililtonian matrix. We find out the eigenvalue of the Hamililtonian matrix which corrspond to the energy density function to Henserberg model. This method is only cater for specific model like Hensenberg model which the Hamilitonian matrix can be block-diagonlized and the Hamilitonian is symmetric. 
