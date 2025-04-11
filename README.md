@@ -82,6 +82,9 @@ $$
 
 In the code, we prove that each second of 1/2 rv result respond to similar value, which means that there are similar ratio of dA/dt, which prove the Kelper's second law.
 
+## 🔧 Assignment 2
+
+
 ## 🔧 Assignment 3
 
 - The follow approach tried to solve the time-independent schrodinger equation.
@@ -209,12 +212,6 @@ We are now considering the problem in Heisenberg model.
 
 The Hamiltonian is:
 
-$$
-H = J \sum_{\langle i,j \rangle} \vec{S}_i \cdot \vec{S}_j \\
-  = J \sum_{\langle i,j \rangle} \left( \frac{1}{2}(S_i^+ S_j^- + S_i^- S_j^+) + S_i^z S_j^z \right)
-$$
-
-
 ### 🔧 Action of \( H \) on Basis States
 
 $$
@@ -295,7 +292,8 @@ $$
 S_A^{\mathrm{vN}} = -\mathrm{Tr}(\rho_A \ln \rho_A)
 $$
 
-The code in my assignment follow 
+The code in my assignment follow the construction of the equation. For the reduced density matrix, it is the dot product of the eigenvector of Hamiltonian Matrix, the code have shown that there is a 10x10 reduced density matrix nad plug in the fomula to calculate the Renyi and von Neumann entropy. The graph of the diestribution of the entropy is also shown in the source code. 
+
 
 
 
