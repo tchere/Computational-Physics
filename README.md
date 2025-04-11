@@ -204,33 +204,7 @@ Application of exact diagonlization to find energy eigen function.
 
 We are now considering the problem in Heisenberg model. 
 
-# 🧮 Heisenberg Model for a Two-Spin System
 
-## 📌 Hamiltonian
-
-The Hamiltonian is:
-
-```latex
-H = J \sum_{\langle i,j \rangle} \vec{S}_i \cdot \vec{S}_j = J \sum_{\langle i,j \rangle} \left( \frac{1}{2}(S_i^+ S_j^- + S_i^- S_j^+) + S_i^z S_j^z \right)
-
-
-H \left| \uparrow \uparrow \right\rangle = \frac{J}{4} \left| \uparrow \uparrow \right\rangle
-
-H \left| \downarrow \downarrow \right\rangle = \frac{J}{4} \left| \downarrow \downarrow \right\rangle
-
-H \left| \uparrow \downarrow \right\rangle = \frac{J}{2} \left| \downarrow \uparrow \right\rangle - \frac{J}{4} \left| \uparrow \downarrow \right\rangle
-
-H \left| \downarrow \uparrow \right\rangle = \frac{J}{2} \left| \uparrow \downarrow \right\rangle - \frac{J}{4} \left| \downarrow \uparrow \right\rangle
-
-
-
-
-\langle \uparrow \uparrow | H | \uparrow \uparrow \rangle = \frac{J}{4} \\
-\langle \downarrow \downarrow | H | \downarrow \downarrow \rangle = \frac{J}{4} \\
-\langle \uparrow \downarrow | H | \uparrow \downarrow \rangle = -\frac{J}{4} \\
-\langle \downarrow \uparrow | H | \downarrow \uparrow \rangle = -\frac{J}{4} \\
-\langle \uparrow \downarrow | H | \downarrow \uparrow \rangle = \frac{J}{2} \\
-\langle \downarrow \uparrow | H | \uparrow \downarrow \rangle = \frac{J}{2}
 
 
 
