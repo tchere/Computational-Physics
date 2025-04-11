@@ -4,7 +4,7 @@
 
 ## 📚 Objective
 
-To equip us with practical computational tools for solving physical problems, including numerical methods for ODEs and PDEs, and advanced techniques like exact diagonalization and Monte Carlo methods for quantum many-body systems.
+To equip us with practical computational tools for solving physical problems, including numerical methods for ODEs and PDEs, and advanced techniques like exact diagonalization for quantum many-body systems.
 
 
 ## 🧠 What I have learned
@@ -12,7 +12,6 @@ To equip us with practical computational tools for solving physical problems, in
 - Relaxation method to solve PDE (Jacobi Relaxation)
 - Method for solving space-time PDE ( Forward time centred space discretisation (FTCS) and CTCS scheme method and Lax-Wendroff method)
 - Quantum many body phsyics ( Exact diagonalization) 
-- Classical and quantum Monte Carol Method 
 
 ---
 
