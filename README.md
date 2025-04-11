@@ -25,6 +25,7 @@ To equip us with practical computational tools for solving physical problems, in
 The first part of Assignment 1 is to use 3 numerical method (Euler velocity verlet and Runge Ketta method to calculate the orbit of the Earth. The fundamental procedure of the method is given the initial boundary condition and calculate the next iternation data, we would like to see which method can have a high precision to complete one orbit. The introduction of the method are written as follow:
 
 - Euler’s Method (The first order forward differentiation)
+  
 $$
 \frac{dy}{dt} = f(t, y), \quad y(t_0) = y_0
 $$
@@ -34,11 +35,6 @@ The update rule is given by:
 $$
 y_{n+1} = y_n + h \cdot f(t_n, y_n)
 $$
-
-Where:
-- \( y_n \) is the approximation of the solution at time \( t_n \),
-- \( h \) is the time step size,
-- \( f(t_n, y_n) \) is the derivative evaluated at \( (t_n, y_n) \).
 
 - Velocity Verlet method
 
@@ -87,7 +83,7 @@ In the code, we prove that each second of 1/2 rv result respond to similar value
 
 ## 🔧 Assignment 3
 
-- energy calculation
+- The follow approach tried to solve the time-independent schrodinger equation.
 
 Wavefunction Representation and Hamiltonian Matrix
 
@@ -149,13 +145,59 @@ $$
 
 ---
 
-Boundary Conditions:
 
-- \( \psi(1) \) has no left neighbour  
-- \( \psi(N) \) has no right neighbour
+We apply the modified Hamiltonain to find out the eigenvalue of the wavefunction, which the eigenvalue is the energy itself. 
+
+The latter part of assignment 3, we use the Crank-Nicolson Scheme to compete the schrodinger equation (PDE).
 
 
-We apply the modified Hamiltonain to find out the enengy funtion of the system, as the eigenvcalue of the Hamiltonian is the energy. 
+Consider the time-dependent Schrödinger equation:
+
+$$
+i\hbar \frac{\partial}{\partial t} \psi(t, x) = H(x) \psi(t, x)
+$$
+
+---
+
+Using the **Crank–Nicolson scheme**, the equation can be written as:
+
+$$
+i\hbar \frac{\psi_r^{n+1} - \psi_r^n}{\tau} = \sum_{s=1}^{N} H_{r,s} \cdot \frac{1}{2} \left( \psi_s^n + \psi_s^{n+1} \right)
+$$
+
+---
+
+With:
+
+$$
+H_{r,s} = -\frac{\hbar^2}{2m} \cdot \frac{\delta_{r+1,s} + \delta_{r-1,s} - 2\delta_{r,s}}{h^2} + V(x_r)\delta_{r,s}
+$$
+
+---
+
+Further:
+
+$$
+\psi^{n+1} = \left( 1 + \frac{i\tau}{2\hbar} H \right)^{-1} \left( 1 - \frac{i\tau}{2\hbar} H \right) \psi^n
+$$
+
+---
+
+Initial condition:
+
+$$
+\psi(t = 0, x) = \frac{1}{\sqrt{\sigma_0 \sqrt{2\pi}}} e^{ik_0(x - x_0)} e^{-\frac{(x - x_0)^2}{2\sigma_0^2}}
+$$
+
+Which the hamiltonian can written as:
+
+$$
+H_{r,s} = -\frac{\hbar^2}{2m} \cdot \frac{\delta_{r+1,s} + \delta_{r-1,s} - 2\delta_{r,s}}{h^2} + V(r)\delta_{r,s}
+$$
+
+We can find out the list of all psi, then we can plot the probability os the system which is the square term of psi.
+
+
 
 
 
