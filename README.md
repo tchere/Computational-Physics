@@ -266,7 +266,7 @@ $$
 In the basis:
 
 $$
-{\left\
+\left\{
 \begin{aligned}
 &\left| \uparrow \uparrow \right\rangle \\
 &\left| \uparrow \downarrow \right\rangle \\
@@ -276,7 +276,7 @@ $$
 \right\}
 $$
 
-The matrix form of \( H \) is:
+The matrix form of H is:
 
 $$
 H = J \begin{pmatrix}
