@@ -218,14 +218,12 @@ H \left| \downarrow \downarrow \right\rangle = \frac{J}{4} \left| \downarrow \do
 $$
 
 $$
-H \left| \uparrow \downarrow \right\rangle 
-= J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \uparrow \downarrow \right\rangle 
+H \left| \uparrow \downarrow \right\rangle  
 = \frac{J}{2} \left| \downarrow \uparrow \right\rangle - \frac{J}{4} \left| \uparrow \downarrow \right\rangle
 $$
 
 $$
-H \left| \downarrow \uparrow \right\rangle 
-= J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \downarrow \uparrow \right\rangle 
+H \left| \downarrow \uparrow \right\rangle  
 = \frac{J}{2} \left| \uparrow \downarrow \right\rangle - \frac{J}{4} \left| \downarrow \uparrow \right\rangle
 $$
 
