@@ -267,12 +267,14 @@ $$
 The Hamiltonian matrix is:
 
 $$
-H = J \begin{pmatrix}
-\frac{1}{4} & 0 & 0 & 0 \\
-0 & -\frac{1}{4} & \frac{1}{2} & 0 \\
-0 & \frac{1}{2} & -\frac{1}{4} & 0 \\
-0 & 0 & 0 & \frac{1}{4}
-\end{pmatrix}
+\left\{
+\begin{aligned}
+&\left| \uparrow \uparrow \right\rangle, \\
+&\left| \uparrow \downarrow \right\rangle, \\
+&\left| \downarrow \uparrow \right\rangle, \\
+&\left| \downarrow \downarrow \right\rangle
+\end{aligned}
+\right\}
 $$
 
 Exact diagonalization is a specific approach that to find out the eigenvalue of each spin operator and they manifest in the Hamililtonian matrix. We find out the eigenvalue of the Hamililtonian matrix which corrspond to the energy density function to Henserberg model. This method is only cater for specific model like Hensenberg model which the Hamilitonian matrix can be block-diagonlized and the Hamilitonian is symmetric. 
