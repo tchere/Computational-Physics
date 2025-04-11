@@ -204,7 +204,7 @@ Application of exact diagonlization to find energy eigen function.
 
 We are now considering the problem in Heisenberg model. 
 
- ## 🧮 Heisenberg Hamiltonian for Two Spins
+## 🧮 Heisenberg Hamiltonian
 
 The Hamiltonian is:
 
@@ -215,7 +215,7 @@ $$
 
 ---
 
-### 🔧 Action of \( H \) on Basis States
+### 🛠️ Action of \( H \) on Basis States
 
 $$
 H \left| \uparrow \uparrow \right\rangle = \frac{J}{4} \left| \uparrow \uparrow \right\rangle
@@ -226,14 +226,12 @@ H \left| \downarrow \downarrow \right\rangle = \frac{J}{4} \left| \downarrow \do
 $$
 
 $$
-H \left| \uparrow \downarrow \right\rangle 
-= J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \uparrow \downarrow \right\rangle 
+H \left| \uparrow \downarrow \right\rangle = J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \uparrow \downarrow \right\rangle 
 = \frac{J}{2} \left| \downarrow \uparrow \right\rangle - \frac{J}{4} \left| \uparrow \downarrow \right\rangle
 $$
 
 $$
-H \left| \downarrow \uparrow \right\rangle 
-= J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \downarrow \uparrow \right\rangle 
+H \left| \downarrow \uparrow \right\rangle = J \left( \frac{1}{2}(S_1^+ S_2^- + S_1^- S_2^+) + S_1^z S_2^z \right) \left| \downarrow \uparrow \right\rangle 
 = \frac{J}{2} \left| \uparrow \downarrow \right\rangle - \frac{J}{4} \left| \downarrow \uparrow \right\rangle
 $$
 
