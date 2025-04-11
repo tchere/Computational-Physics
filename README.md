@@ -263,6 +263,7 @@ $$
 \right\}
 $$
 
+
 The Hamiltonian matrix is:
 
 $$
