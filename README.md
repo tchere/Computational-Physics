@@ -266,7 +266,7 @@ $$
 In the basis:
 
 $$
-\left\{
+{\left\
 \begin{aligned}
 &\left| \uparrow \uparrow \right\rangle \\
 &\left| \uparrow \downarrow \right\rangle \\
