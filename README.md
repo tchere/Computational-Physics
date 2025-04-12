@@ -108,13 +108,10 @@ Gauss-Seidel Relaxation Equation
 The Gauss-Seidel update rule for the 2D Poisson equation is:
 
 $$
-\phi^{(k+1)}_{i,j} = \frac{1}{4} \left(
-\phi^{(k+1)}_{i+1,j} +
-\phi^{(k+1)}_{i-1,j} +
-\phi^{(k+1)}_{i,j+1} +
-\phi^{(k+1)}_{i,j-1}
-\right) + \frac{h^2}{4\varepsilon_0} \rho_{i,j}
+\phi_{i,j}^{(k+1)} = \frac{1}{4} \left( \phi_{i+1,j}^{(k)} + \phi_{i-1,j}^{(k+1)} + \phi_{i,j+1}^{(k)} + \phi_{i,j-1}^{(k+1)} - h^2 f_{i,j} \right)
 $$
+
+
 
 The first updated iteration need to be calculated by Jacobi method, the updated rule of Gauss-Seidel method adopt the current-neighbour method, which use the updated data point immediately. 
 
@@ -123,13 +120,10 @@ Successive Overrelaxation (SOR) Method
 The update rule for the SOR method is:
 
 $$
-\phi^{(k+1)}_{i,j} = (1 - \omega)\phi^{(k)}_{i,j} + \frac{\omega}{4} \left(
-\phi^{(k+1)}_{i+1,j} +
-\phi^{(k+1)}_{i-1,j} +
-\phi^{(k+1)}_{i,j+1} +
-\phi^{(k+1)}_{i,j-1}
-\right) + \frac{\omega h^2}{4\varepsilon_0} \rho_{i,j}
+\phi(\vec{r}) \rightarrow (1 - \omega)\phi(\vec{r}) + \omega \left( \frac{1}{2d} \sum_{i=1}^{d} \left( \phi(\vec{r} + h \vec{e}_i) + \phi(\vec{r} - h \vec{e}_i) \right) + \frac{h^2}{2d \varepsilon_0} \rho(\vec{r}) \right)
 $$
+
+
 
 SOR is a faster version of Gauss-Seidel that uses a weighted average to accelerate convergence. We need to choose the optimal weighting to do the update.
 
@@ -144,13 +138,11 @@ $$
 h \\
 u
 \end{pmatrix}
-=
-- \frac{\partial}{\partial x}
+= - \frac{\partial}{\partial x}
 \begin{pmatrix}
-(h - b)u \\
-\frac{1}{2}u^2 + gh
+(h - b) u \\
+\frac{1}{2} u^2 + g h
 \end{pmatrix}
-$$
 
 
 ## space-time PDE
@@ -167,7 +159,7 @@ For Lax method, it is given:
 
 $$
 u(n+1, r) = \frac{1}{2} \left( u(n, r+1) + u(n, r-1) \right)
-- \frac{c \tau}{2h} \left( u(n, r+1) - u(n, r-1) \right)
+-\frac{c \tau}{2h} \left( u(n, r+1) - u(n, r-1) \right)
 $$
 
 The idea of Lax method is still the exapansion of the first order foward differentiation both side, while the advantage of this method numerical diffusion added in the first term, which gives more stable prediction. 
@@ -177,7 +169,7 @@ For Lax Wendroff method, it is given:
 
 $$
 u_i^{n+1} = u_i^n - \frac{a \Delta t}{2 \Delta x}(u_{i+1}^n - u_{i-1}^n)
-+ \frac{a^2 \Delta t^2}{2 \Delta x^2}(u_{i+1}^n - 2u_i^n + u_{i-1}^n)
++\frac{a^2 \Delta t^2}{2 \Delta x^2}(u_{i+1}^n - 2u_i^n + u_{i-1}^n)
 $$
 
 Lax-Wendroff method adopt the second order order approximation, it is more accurate than the Lax method but more running time. 
