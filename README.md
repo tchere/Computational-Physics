@@ -143,7 +143,7 @@ u
 (h - b) u \\
 \frac{1}{2} u^2 + g h
 \end{pmatrix}
-
+$$
 
 ## space-time PDE
 
