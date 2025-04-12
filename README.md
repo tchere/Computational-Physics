@@ -81,6 +81,8 @@ $$
 
 In the code, we prove that each second of 1/2 rv result respond to similar value, which means that there are similar ratio of dA/dt, which prove the Kelper's second law.
 
+--- 
+
 ## 🔧 Assignment 2
 
 The aim of this assignment is to compare 3 different relaxiation method to solve the Poisson equation (potential problem), and use Lax and Lax-Wendroff method to solve space-time PDE.
@@ -97,57 +99,92 @@ $$
 Jacobi Relaxation method update the iteration using the current 4 neighbour, the below is the pseudocode for Jocobi Relaxation.
 
 
-FUNCTION JacobiRelaxation(bound):
-    iter ← 0
-    potential_current ← initial potential (copy)
-    DO:
-        iter ← iter + 1
-        potential_new ← copy of potential_current
-
-        FOR i from 1 to N-2:
-            FOR j from 1 to N-2:
-                left  ← i - h
-                right ← i + h
-                down  ← j - h
-                up    ← j + h
-
-                potential_new[i, j] ← (1 / (2 × d)) × (
-                                          potential_current[i, up] +
-                                          potential_current[i, down] +
-                                          potential_current[right, j] +
-                                          potential_current[left, j]
-                                      ) + (h² / (2 × d × ε)) × charge_density[i - N/2, j - N/2]
-
-        max_delta ← maximum absolute difference between potential_new and potential_current
-
-        potential_current ← copy of potential_new
-
-    WHILE max_delta > bound
-
-    RETURN iter, potential_new
-
 Gauss-Seidel Relaxation
 
 
 Gauss-Seidel Relaxation Equation
 
 
-
 The Gauss-Seidel update rule for the 2D Poisson equation is:
 
-\[
+$$
 \phi^{(k+1)}_{i,j} = \frac{1}{4} \left(
 \phi^{(k+1)}_{i+1,j} +
 \phi^{(k+1)}_{i-1,j} +
 \phi^{(k+1)}_{i,j+1} +
 \phi^{(k+1)}_{i,j-1}
 \right) + \frac{h^2}{4\varepsilon_0} \rho_{i,j}
-\]
+$$
+
+The first updated iteration need to be calculated by Jacobi method, the updated rule of Gauss-Seidel method adopt the current-neighbour method, which use the updated data point immediately. 
+
+Successive Overrelaxation (SOR) Method
+
+The update rule for the SOR method is:
+
+$$
+\phi^{(k+1)}_{i,j} = (1 - \omega)\phi^{(k)}_{i,j} + \frac{\omega}{4} \left(
+\phi^{(k+1)}_{i+1,j} +
+\phi^{(k+1)}_{i-1,j} +
+\phi^{(k+1)}_{i,j+1} +
+\phi^{(k+1)}_{i,j-1}
+\right) + \frac{\omega h^2}{4\varepsilon_0} \rho_{i,j}
+$$
+
+SOR is a faster version of Gauss-Seidel that uses a weighted average to accelerate convergence. We need to choose the optimal weighting to do the update.
+
+To sum up, The SOR method give the highest efficiency among the 3 method, we use 3 method to plot the 3d graph in the specific boundary condition (star and cylindrical boundary condition).
 
 
+For the latter part of the assignment, we try to simulate the motion of tsunami, the equation of it is:
+
+$$
+\frac{\partial}{\partial t}
+\begin{pmatrix}
+h \\
+u
+\end{pmatrix}
+=
+- \frac{\partial}{\partial x}
+\begin{pmatrix}
+(h - b)u \\
+\frac{1}{2}u^2 + gh
+\end{pmatrix}
+$$
 
 
+## space-time PDE
 
+We are solving: 
+
+$$
+\frac{\partial u}{\partial t} = -\frac{\partial F(u)}{\partial x}
+$$
+
+For numerical method, we adopt the Lax and Lax Wendroff method, in this course, we had also been taught with FTCS method to solve the space-time PDE, while, the solution of the FTCS scheme is not stable, the detail explaination have been written in the assignment 2. 
+
+For Lax method, it is given: 
+
+$$
+u(n+1, r) = \frac{1}{2} \left( u(n, r+1) + u(n, r-1) \right)
+- \frac{c \tau}{2h} \left( u(n, r+1) - u(n, r-1) \right)
+$$
+
+The idea of Lax method is still the exapansion of the first order foward differentiation both side, while the advantage of this method numerical diffusion added in the first term, which gives more stable prediction. 
+
+For Lax Wendroff method, it is given: 
+
+
+$$
+u_i^{n+1} = u_i^n - \frac{a \Delta t}{2 \Delta x}(u_{i+1}^n - u_{i-1}^n)
++ \frac{a^2 \Delta t^2}{2 \Delta x^2}(u_{i+1}^n - 2u_i^n + u_{i-1}^n)
+$$
+
+Lax-Wendroff method adopt the second order order approximation, it is more accurate than the Lax method but more running time. 
+
+The equation of tsunami is a 2 variable space-time PDE, we can solve it as two 1-D PDE which named the variable as x and y axis to solve the problem, the animation is shown in the last part of question 4.
+
+--- 
 
 ## 🔧 Assignment 3
 
@@ -265,6 +302,8 @@ $$
 
 We can find out the list of all psi, then we can plot the probability distribution of the system which is the square term of psi.
 
+--- 
+
 ## Assignment 4
 
 Application of exact diagonlization to find energy eigen function.
@@ -363,60 +402,5 @@ The code in my assignment follow the construction of the equation. For the reduc
 
 
 
-### 📘 Applications
-- Simple Harmonic Oscillator
-- Damped/Driven Oscillators
-- Two-body gravitational problem
-- Chaos: Lorenz system
 
----
 
-## 🌊 Module 2: Numerical PDEs
-
-This module introduces techniques to solve **partial differential equations (PDEs)** relevant in heat flow, wave propagation, and quantum mechanics.
-
-### 🔧 Topics
-- Finite Difference Method (FDM)
-- Crank-Nicolson Scheme
-- Stability and Convergence
-- Boundary and Initial Conditions
-
-### 📘 Applications
-- Heat Equation (1D, 2D)
-- Wave Equation
-- Schrödinger Equation (Time-dependent)
-
----
-
-## 🧬 Module 3: Exact Diagonalization & Entropy
-
-This module explores solving quantum mechanical systems using **exact diagonalization** and applying it to study **quantum entanglement entropy**.
-
-### 🔧 Topics
-- Hilbert space construction
-- Fermionic/bosonic occupation basis
-- Hamiltonian matrix construction
-- Eigenvalue problem solvers (`numpy.linalg.eigh`)
-
-### 📘 Applications
-- Tight-binding model (2D lattice)
-- Many-body Hamiltonians
-- Entanglement entropy:
-  - Von Neumann entropy
-  - Renyi entropy
-  - Subsystem tracing
-
----
-
-## 📦 Tools and Libraries
-
-- Python 3.x
-- NumPy
-- SciPy
-- Matplotlib
-- Jupyter Notebooks (for interactive coding)
-- (Optional) QuTiP for quantum systems
-
----
-
-## 📁 Repository Structure
