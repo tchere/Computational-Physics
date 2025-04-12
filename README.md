@@ -83,6 +83,55 @@ In the code, we prove that each second of 1/2 rv result respond to similar value
 
 ## 🔧 Assignment 2
 
+The aim of this assignment is to compare 3 different relaxiation method to solve the Poisson equation (potential problem), and use Lax and Lax-Wendroff method to solve space-time PDE.
+
+## Poisson Equation 
+The 3 numerical method I introduce here follow the grid (lattice) updated structure, which means that each updated point will appear 4 nearest neighbour.
+
+Jacobi Relaxation 
+
+$$
+\phi(\vec{r}) = \frac{1}{2d} \sum_{i=1}^{d} \left( \phi(\vec{r} + h \vec{e}_i) + \phi(\vec{r} - h \vec{e}_i) \right) + \frac{h^2}{2d \varepsilon_0} \rho(\vec{r})
+$$
+
+Jacobi Relaxation method update the iteration using the current 4 neighbour, the below is the pseudocode for Jocobi Relaxation.
+
+FUNCTION JacobiRelaxation(bound):
+    iter ← 0
+    potential_current ← initial potential (copy)
+
+    DO:
+        iter ← iter + 1
+        potential_new ← copy of potential_current
+
+        FOR i from 1 to N-2:
+            FOR j from 1 to N-2:
+                left  ← i - h
+                right ← i + h
+                down  ← j - h
+                up    ← j + h
+
+                potential_new[i, j] ← (1 / (2 × d)) × (
+                                          potential_current[i, up] +
+                                          potential_current[i, down] +
+                                          potential_current[right, j] +
+                                          potential_current[left, j]
+                                      ) + (h² / (2 × d × ε)) × charge_density[i - N/2, j - N/2]
+
+        max_delta ← maximum absolute difference between potential_new and potential_current
+
+        potential_current ← copy of potential_new
+
+    WHILE max_delta > bound
+
+    RETURN iter, potential_new
+
+
+
+
+
+
+
 
 ## 🔧 Assignment 3
 
