@@ -9,8 +9,8 @@ To equip us with practical computational tools for solving physical problems, in
 
 ## 🧠 What I have learned
 - Classical equation of motion (pendulum and wave problem solved by numerical ODE, such as Euler method, Leap frog and 4th order Runge Kutta method on harmonic oscillator)
-- Relaxation method to solve PDE (Jacobi Relaxation)
-- Method for solving space-time PDE ( Forward time centred space discretisation (FTCS) and CTCS scheme method and Lax-Wendroff method)
+- Relaxation method to solve PDE (e.g.Jacobi Relaxation)
+- Method for solving space-time PDE (e.g. Forward time centred space discretisation (FTCS) and CTCS scheme method, Lax-Wendroff method)
 - Quantum many body phsyics ( Exact diagonalization) 
 
 ---
