@@ -131,16 +131,18 @@ Gauss-Seidel Relaxation
 
 Gauss-Seidel Relaxation Equation
 
+
+
 The Gauss-Seidel update rule for the 2D Poisson equation is:
 
-$$
+\[
 \phi^{(k+1)}_{i,j} = \frac{1}{4} \left(
 \phi^{(k+1)}_{i+1,j} +
 \phi^{(k+1)}_{i-1,j} +
 \phi^{(k+1)}_{i,j+1} +
 \phi^{(k+1)}_{i,j-1}
 \right) + \frac{h^2}{4\varepsilon_0} \rho_{i,j}
-$$
+\]
 
 
 
