@@ -96,10 +96,10 @@ $$
 
 Jacobi Relaxation method update the iteration using the current 4 neighbour, the below is the pseudocode for Jocobi Relaxation.
 
+
 FUNCTION JacobiRelaxation(bound):
     iter ← 0
     potential_current ← initial potential (copy)
-
     DO:
         iter ← iter + 1
         potential_new ← copy of potential_current
@@ -126,6 +126,19 @@ FUNCTION JacobiRelaxation(bound):
 
     RETURN iter, potential_new
 
+Gauss-Seidel Relaxation
+
+
+The Gauss-Seidel update rule for the 2D Poisson equation is:
+
+$$
+\phi^{(k+1)}_{i,j} = \frac{1}{4} \left(
+\phi^{(k+1)}_{i+1,j} +
+\phi^{(k+1)}_{i-1,j} +
+\phi^{(k+1)}_{i,j+1} +
+\phi^{(k+1)}_{i,j-1}
+\right) + \frac{h^2}{4\varepsilon_0} \rho_{i,j}
+$$
 
 
 
